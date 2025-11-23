@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Front-End Developer — Portfolio",
+  title: "Majeed Abro - Portfolio",
   description: "Portfolio of a front-end developer & Upwork freelancer",
 };
 

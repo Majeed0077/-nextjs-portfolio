@@ -2,6 +2,7 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const NAV = [
   { href: "#top", label: "Home" },
@@ -26,8 +27,16 @@ export default function Header() {
       <div className={`header-pill ${scrolled ? "shrink" : ""}`}>
         <nav className="nav">
           <div className="brand">
-            <div className="logo-square" />
-            <span>Majeed</span>
+            <div className="logo-square">
+              <Image
+                src="/Logo.png"     
+                alt="Majeed avatar"
+                width={40}
+                height={40}
+                className="logo-img"
+              />
+            </div>
+            <span>Majeed Abro</span>
             <svg className="brand-curve" viewBox="0 0 200 100">
               <defs>
                 <linearGradient id="g" x1="0" x2="1">
@@ -35,7 +44,13 @@ export default function Header() {
                   <stop offset="100%" stopColor="#3B82F6" stopOpacity=".1" />
                 </linearGradient>
               </defs>
-              <path d="M10,60 C60,20 120,120 190,30" fill="none" stroke="url(#g)" strokeWidth="20" strokeLinecap="round" />
+              <path
+                d="M10,60 C60,20 120,120 190,30"
+                fill="none"
+                stroke="url(#g)"
+                strokeWidth="20"
+                strokeLinecap="round"
+              />
             </svg>
           </div>
 

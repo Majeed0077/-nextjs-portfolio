@@ -14,15 +14,33 @@ const skills = [
   "Express.Js",
   "Redux",
   "Wordpress",
+  "Elementor",
   "PHP",
   "Tailwind",
 ];
 const projects = [
-  { id: 1, title: "Dashboard UI", gradient: "grad-1" },
-  { id: 2, title: "Landing Page", gradient: "grad-2" },
-  { id: 3, title: "E-commerce", gradient: "grad-3" },
-  { id: 4, title: "Design System", gradient: "grad-4" },
+  {
+    id: 1,
+    title: "Dashboard UI",
+    image: "https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg",
+  },
+  {
+    id: 2,
+    title: "Landing Page",
+    image: "https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg",
+  },
+  {
+    id: 3,
+    title: "E-commerce",
+    image: "https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg",
+  },
+  {
+    id: 4,
+    title: "Design System",
+    image: "https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg",
+  },
 ];
+
 
 export default function Page() {
   return (
@@ -52,7 +70,7 @@ export default function Page() {
                   Hire Me on Upwork
                 </a>
                 <a href="#projects" className="btn-ghost">
-                  View Projects
+                  Download Resume
                 </a>
               </div>
             </div>
@@ -180,8 +198,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-
-      <section className="section">
+<section className="section">
   <h2 className="h2">Experience & Upwork</h2>
 
   <div className="grid-2 gap exp-grid">
@@ -191,7 +208,9 @@ export default function Page() {
         <h3 className="h3">Senior Front-End Developer</h3>
         <span className="exp-dates">2018 — Present</span>
       </header>
-      <p className="muted mt">Tech Company · React, Next.js, CSS architecture</p>
+      <p className="muted mt">
+        Tech Company · React, Next.js, CSS architecture
+      </p>
     </article>
 
     <div className="card p row-between upwork-card">
@@ -199,7 +218,9 @@ export default function Page() {
         <h3 className="h3">Upwork Top Rated</h3>
         <p className="muted small">130+ reviews · 4.9/5</p>
       </div>
-      <div className="stars"><i/><i/><i/><i/><i/></div>
+      <div className="stars">
+        <i /><i /><i /><i /><i />
+      </div>
     </div>
 
     {/* row 2 */}
@@ -208,26 +229,71 @@ export default function Page() {
         <h3 className="h3">UI Developer</h3>
         <span className="exp-dates">2021 — 2023</span>
       </header>
-      <p className="muted mt">Freelance · Component libraries, animations, accessibility</p>
+      <p className="muted mt">
+        Freelance · Component libraries, animations, accessibility
+      </p>
     </article>
 
     <div className="card p">
       <p className="muted small">Clients</p>
       <div className="logo-grid">
-        <div className="logo"/><div className="logo"/><div className="logo"/><div className="logo"/>
+        <div className="logo">
+          <Image
+            src="https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg"
+            alt="Client 1"
+            fill
+            className="logo-img"
+            sizes="(max-width: 900px) 50vw, 20vw"
+          />
+        </div>
+        <div className="logo">
+          <Image
+            src="https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg"
+            alt="Client 2"
+            fill
+            className="logo-img"
+            sizes="(max-width: 900px) 50vw, 20vw"
+          />
+        </div>
+        <div className="logo">
+          <Image
+            src="https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg"
+            alt="Client 3"
+            fill
+            className="logo-img"
+            sizes="(max-width: 900px) 50vw, 20vw"
+          />
+        </div>
+        <div className="logo">
+          <Image
+            src="https://www.ntaskmanager.com/wp-content/uploads/2020/02/What-is-a-Project-1-scaled.jpg"
+            alt="Client 4"
+            fill
+            className="logo-img"
+            sizes="(max-width: 900px) 50vw, 20vw"
+          />
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-
       {/* PORTFOLIO */}
       <section id="projects" className="section">
         <h2 className="h2">Portfolio</h2>
+
         <div className="grid-4 gap">
           {projects.map((p) => (
             <article key={p.id} className="portfolio-card">
-              <div className={`thumb-square ${p.gradient}`} />
+              <div className="thumb-square">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  width={600}
+                  height={400}
+                  className="thumb-img"
+                />
+              </div>
               <div className="portfolio-meta">
                 <h3 className="h4">{p.title}</h3>
                 <span className="muted small">View</span>
